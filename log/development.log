@@ -1,0 +1,602 @@
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (571.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (121.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateScores (20120504191746)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "score" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120504191746')
+  [1m[36m (111.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("scores")
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at Fri May 04 13:18:18 -0600 2012
+Served asset /rails.png - 200 OK (19ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:19:02 -0600 2012
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.3) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  rack (1.4.1) lib/rack/handler/webrick.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.3) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.3) lib/rails/commands.rb:55
+  railties (3.2.3) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.3) lib/rails/commands.rb:50
+  script/rails:6:in `require'
+  script/rails:6
+
+
+  Rendered /var/lib/gems/1.8/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/scores" for 127.0.0.1 at Fri May 04 13:19:40 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.0ms)
+Compiled scaffolds.css  (109ms)  (pid 9320)
+Compiled scores.css  (4ms)  (pid 9320)
+Compiled application.css  (173ms)  (pid 9320)
+Compiled jquery.js  (51ms)  (pid 9320)
+Compiled jquery_ujs.js  (0ms)  (pid 9320)
+Compiled scores.js  (117ms)  (pid 9320)
+Compiled application.js  (217ms)  (pid 9320)
+Completed 200 OK in 536ms (Views: 523.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /scaffolds.css - 200 OK (2ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /scores.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /jquery.js - 200 OK (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /jquery_ujs.js - 200 OK (3ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /scores.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:19:41 -0600 2012
+Served asset /application.js - 200 OK (6ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 77ms (Views: 65.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /scores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:21:21 -0600 2012
+Served asset /scores.js - 304 Not Modified (1ms)
+
+
+Started GET "/scores/new" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Processing by ScoresController#new as HTML
+  Rendered scores/_form.html.erb (4.6ms)
+  Rendered scores/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:21:30 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/scores" for 127.0.0.1 at Fri May 04 13:21:42 -0600 2012
+Processing by ScoresController#create as HTML
+  Parameters: {"utf8"=>"✓", "score"=>{"score"=>"12345", "name"=>"richie"}, "commit"=>"Create Score", "authenticity_token"=>"JgQ45/Fij8x5HXvOEP3UvVRBfIAsw4cxVarZ17acz8A="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.6ms)[0m  [1mINSERT INTO "scores" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Fri, 04 May 2012 19:21:42 UTC +00:00], ["name", "richie"], ["score", 12345], ["updated_at", Fri, 04 May 2012 19:21:42 UTC +00:00]]
+  [1m[35m (114.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/scores/1
+Completed 302 Found in 174ms (ActiveRecord: 117.9ms)
+
+
+Started GET "/scores/1" for 127.0.0.1 at Fri May 04 13:21:42 -0600 2012
+Processing by ScoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered scores/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:21:43 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/scores" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:21:45 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/scores" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 81ms (Views: 66.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /scores.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /scores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:26:34 -0600 2012
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:26:49 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:27:03 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:27:36 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:27:41 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:27:44 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:29:44 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.1ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:29:45 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/scores" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:30:25 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:27 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:28 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:28 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:29 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:30 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:40 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:47 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 60ms (Views: 59.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:30:52 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:31:01 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:31:21 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri May 04 13:32:01 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:33:13 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:33:38 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:33:44 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/scores.html" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Processing by ScoresController#index as HTML
+  [1m[35mScore Load (0.1ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:35:41 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:35:59 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[36mScore Load (0.4ms)[0m  [1mSELECT "scores".* FROM "scores" [0m
+  Rendered scores/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:35:59 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:35:59 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:35:59 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:36:18 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mScore Load (0.2ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:36:18 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:36:18 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:36:18 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/scores/1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Processing by ScoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mScore Load (0.2ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered scores/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.js?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Fri May 04 13:36:24 -0600 2012
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/" for 127.0.0.1 at Fri May 04 13:36:56 -0600 2012
+Processing by ScoresController#index as HTML
+WARNING: Can't verify CSRF token authenticity
+  [1m[35mScore Load (0.4ms)[0m  SELECT "scores".* FROM "scores" 
+  Rendered scores/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Fri May 04 13:36:56 -0600 2012
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at Fri May 04 13:36:56 -0600 2012
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scores.css?body=1" for 127.0.0.1 at Fri May 04 13:36:56 -0600 2012
+Served asset /scores.css - 304 Not Modified (0ms)

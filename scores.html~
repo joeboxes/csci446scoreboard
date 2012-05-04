@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>HIGH SCORES</title>
+	<script type="text/javascript">
+<!-- HIGH SCORES
+// http://www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp
+var request = new XMLHttpRequest();
+loadScores();
+function loadScores(){
+	//alert('mmm');
+	var reqType = "POST"; // GET/POST
+	var reqURL = "http://localhost:3000/"; // http://127.0.0.1:3000
+	var reqSync = true; // true/false
+	request.onreadystatechange=updateScores;
+	request.open(reqType,reqURL,reqSync);
+	request.send();
+	
+}
+function updateScores(){
+	if (request.readyState==4){// && request.status==200){
+		alert([request.readyState,request.status]);
+		document.getElementById("scores").innerHTML = [request.readyState,request.status,request.responseText];
+	}
+}
+-->
+	</script>
+</head>
+<body>
+	<h1>HIGH SCORES!</div>
+	<div id="scores"></div>
+</body>
+</html>
