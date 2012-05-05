@@ -6,12 +6,13 @@ function Comm(){
 	var dispatch = new Dispatch();
 	var requestIndex = new XMLHttpRequest();
 	var requestAdd = new XMLHttpRequest();
+	var baseURL = "sharp-mist-1683.herokuapp.com/";
 	
 	this.addScore = addScore;
 	function addScore(name,score){
 		var params = "name="+name+"&score="+score;
 		var reqType = "POST";
-		var reqURL = "http://localhost:3000/scores"+"?"+params;
+		var reqURL = baseURL+"scores"+"?"+params;
 		var reqSync = true;
 		requestAdd.onreadystatechange = addedScores;
 		requestAdd.open(reqType,reqURL,reqSync);
@@ -28,7 +29,7 @@ function Comm(){
 	this.listScores = listScores;
 	function listScores(){
 		var reqType = "GET";
-		var reqURL = "http://localhost:3000/scores.json";
+		var reqURL = baseURL+"scores.json";
 		var reqSync = true;
 		requestIndex.onreadystatechange = updateScores; // show current list
 		requestIndex.open(reqType,reqURL,reqSync);
