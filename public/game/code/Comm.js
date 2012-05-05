@@ -6,7 +6,9 @@ function Comm(){
 	var dispatch = new Dispatch();
 	var requestIndex = new XMLHttpRequest();
 	var requestAdd = new XMLHttpRequest();
-	var baseURL = "sharp-mist-1683.herokuapp.com/";
+	var baseURL = "http://sharp-mist-1683.herokuapp.com/";
+	// sharp-mist-1683.herokuapp.com/scores?name=richie&score=0
+	// http://sharp-mist-1683.herokuapp.com/game/game.html
 	
 	this.addScore = addScore;
 	function addScore(name,score){
