@@ -14,6 +14,7 @@ function Comm(){
 		var reqType = "POST";
 		var reqURL = baseURL+"scores"+"?"+params;
 		var reqSync = true;
+		alert(reqURL);
 		requestAdd.onreadystatechange = addedScores;
 		requestAdd.open(reqType,reqURL,reqSync);
 		requestAdd.send();
