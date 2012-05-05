@@ -1,0 +1,64 @@
+/* game.css - game styles */
+
+/* default everything */
+body,h1,h2,h3,h4,h5,h6,p,ol,ul,li,a,div,table,tr,th,td,header,footer,canvas{
+/* sans-serif  */
+	font-family: "Courier New", Courier, monospace;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	vertical-align: middle;
+	text-align: center;
+	color: #000;
+	border: none;
+}
+
+body{
+	background: #FFF;
+}
+
+h2{
+	font-size: 25px;
+	font-weight: bold;
+/*	font-style: italic;*/
+	letter-spacing: 2px;
+	padding-bottom: 10px;
+}
+
+/* centering div horizontally */
+.center{
+	margin: auto;
+	display: block;
+}
+
+/* centering canvas object */
+.centerCanvas{
+/*	background-color: #F56;*/
+	position: absolute;
+	top:50%;
+	height: 500px;
+	margin-top: -250px;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+}
+
+/* debugging window */
+#output{
+	width: 600px;
+	height: 15px;
+	text-align: center;
+	overflow: hidden;
+	font-size: 14px;
+	background-color: #FFF;
+}
+
+
+
+
+
+
+
+
+

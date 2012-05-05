@@ -1,7 +1,9 @@
 Scoreboard::Application.routes.draw do
   resources :scores
-  root :to => 'scores#index'
-  
+  #root :to => '#'scores#index'
+  #root :to => redirect('/public/game/game.html')
+  root :to => 'bullshit#index'
+# http://localhost:3000/game/game.html
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

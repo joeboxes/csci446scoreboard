@@ -2,11 +2,11 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.all();
-	#@scores.sort!{ |a,b| b.score <=> a.score } # highest score first
+    @scores = Score.all
+	@scores.sort!{ |a,b| b.score <=> a.score } # highest score first
     respond_to do |format|
       format.html # index.html.erb
-      format.json { @scores = Score.find(:all, :order => 'score desc', :limit => 20); render :json => @scores }
+      format.json { render :json => @scores }
     end
   end
 

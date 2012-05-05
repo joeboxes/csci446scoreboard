@@ -1,24 +1,73 @@
 <html>
 <head>
 	<title>HIGH SCORES</title>
+	<script src="jquery-1.7.2.js"></script>
 	<script type="text/javascript">
 <!-- HIGH SCORES
 // http://www.w3schools.com/ajax/ajax_xmlhttprequest_send.asp
-var request = new XMLHttpRequest();
-loadScores();
-function loadScores(){
+// http://www.ruby-forum.com/topic/210267
+// http://stackoverflow.com/questions/6446888/sending-http-request-using-ruby-on-rails
+// http://stackoverflow.com/questions/9016096/xmlhttprequest-post-method-headers-are-stopping-function
+//
+// http://www.learn-ajax-tutorial.com/Json.cfm
+// http://stackoverflow.com/questions/4914745/post-json-to-rails-server
+// http://www.intelligrape.com/blog/2010/06/11/jquery-send-json-object-with-an-ajax-request/
+var request;
+window.addEventListener('load', winLoadFxn, false);
+function winLoadFxn(){
+	request = new XMLHttpRequest();
+	//listScores();
+	addScore('richie2','55555');
+//	var token = $('meta[name="csrf-token"]')
+//	var attr = token.attr('content');
+//	alert([token,attr]);
+}
+function listScores(){
 	//alert('mmm');
-	var reqType = "POST"; // GET/POST
-	var reqURL = "http://localhost:3000/"; // http://127.0.0.1:3000
-	var reqSync = true; // true/false
-	request.onreadystatechange=updateScores;
+	var reqType = "GET";
+	var reqURL = "http://localhost:3000/scores.json";
+	var reqSync = true;
+	request.onreadystatechange=updateScores; // show current list
 	request.open(reqType,reqURL,reqSync);
-	request.send();
+	request.send(); // nothing specific
+}
+function addScore(name,score){
+//	var params = "score=name"+name+"score"+score;
+	var params = "name="+name+"&score="+score;
+	var reqType = "POST";
+	var reqURL = "http://localhost:3000/scores"+"?"+params;
+// score4233namemanman
+	var reqSync = true;
+	//alert(params);
+	request.onreadystatechange=showStuff; // show new list
+//		request.setRequestHeader('Content-Type','text/xml');
+//		request.setRequestHeader("Content-type","application/x-www-form-urlencoded",true);
+//alert('a');
+		// http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		//http.setRequestHeader("Content-length", params.length);
+		//http.setRequestHeader("Connection", "close");
+//		request.setRequestHeader('Content-length',params.length);
+//		request.setRequestHeader('Connection','close');
+	request.open(reqType,reqURL,reqSync);
+	request.send();//params);
 	
+}
+function showStuff(){
+	if (request.readyState==4 && request.status==200){
+		listScores();
+	}
 }
 function updateScores(){
 	if (request.readyState==4 && request.status==200){
-		document.getElementById("scores").innerHTML = request.responseText;
+		var resp = request.responseText;
+		var data = eval('('+resp+')');
+		var len = data.length;
+		var i;
+		var scoreData = "";
+		for(i=0;i<len;++i){
+			scoreData = scoreData + data[i].name + " : " + data[i].score + "<br/\>";
+		}
+		document.getElementById("scores").innerHTML = scoreData;
 	}
 }
 -->

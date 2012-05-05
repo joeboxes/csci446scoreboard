@@ -1,0 +1,50 @@
+// MultiLoader.js
+
+function MultiLoader(arr,obj){
+	var list = new Array();
+	var fxnComplete = null;
+	var timer = null;
+	var reference = null;
+	setLoadList(arr,obj);
+	
+	this.setLoadList = setLoadList;
+	function setLoadList(arr,obj){
+		reference = obj;
+
+
+		Code.emptyArray(list);
+		var i;
+		for(i=0;i<arr.length;++i){
+			list.push(arr[i]);
+		}
+	}
+	this.load = load;
+	function load(){
+		next(null);
+	}
+	function next(){
+		if(list.length==0){
+			if(fxnComplete!=null){
+				fxnComplete(reference);
+			}
+			return;
+		}
+		var fxn = list.pop();
+		fxn(reference);
+		timer = setTimeout(next,10);
+	}
+	this.setFxnComplete = setFxnComplete;
+	function setFxnComplete(fxn){
+		fxnComplete = fxn;
+	}
+	this.kill = kill;
+	function kill(){
+		/*Code.emptyArray(list);
+		list = null;
+		fxnComplete = null;
+		timer = null;*/
+	}
+}
+
+
+

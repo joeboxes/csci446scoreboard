@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- game viewier -->
+<html>
+	<head>
+		<title>Bakos' Ruby Data Mining - HTML5</title>
+		<!-- external resources -->
+		<link rel="stylesheet" type="text/css" href="game.css"/>
+		<script src="jquery-1.7.2.js"></script>			
+		<script src="code/Dispatch.js"></script>
+		<script src="code/LLNode.js"></script>
+		<script src="code/Queue.js"></script>
+		<script src="code/V2D.js"></script>
+		<script src="code/Obj2D.js"></script>
+		<script src="code/Code.js"></script>
+		<script src="code/Ticker.js"></script>
+		<script src="code/Keyboard.js"></script>
+		<script src="code/ImageLoader.js"></script>
+		<script src="code/MultiLoader.js"></script>
+		<script src="code/Resource.js"></script>
+		<script src="code/Output.js"></script>
+		<script src="code/Canvas.js"></script>
+		<script src="code/Voxel.js"></script>
+		<script src="code/Lattice.js"></script>
+		<script src="code/Map.js"></script>
+		<script src="code/Win.js"></script>
+		<script src="code/Comm.js"></script>
+		<script src="bakos/ResourceBakos.js"></script>
+		<script src="bakos/game.js"></script>
+		<script type="text/javascript">
+			window.addEventListener('load', winLoadFxn, false);
+			function winLoadFxn(){
+				startLoad();
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!-- internal resources -->
+		<div id="windows">
+		</div>
+		<div class="centerCanvas">
+			<h2 id="title">Bakos' Ruby Data Mining</h2>
+			<canvas id="canvas0" width="600" height="400"></canvas>
+			<div id="output" class="center"></div>
+		</div>
+		
+	</body>
+</html>

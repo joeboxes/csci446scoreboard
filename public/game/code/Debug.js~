@@ -1,0 +1,43 @@
+// CLASS VARIABLES
+var CANVAS_NUM_ALL =  0;
+
+function Debug(debHTML){ // input is debug HTML object
+	
+// VARIABLES --------------------------------------------------------------
+	// public
+	this.MAXCHARS = 255;
+	// private
+	var output;
+	
+	
+	
+	// constructor
+	output = debHTML;
+	
+	
+// FUNCTIONS --------------------------------------------------------------
+	// public
+	this.getOutput = getOutput;
+	function getOutput(){
+		return output;
+	}
+	
+	this.write = write;
+	function write(str){
+		output.innerHTML = str;
+		alert( output.innerHTML );
+	}
+	
+	this.clear = clear;
+	function clear(){
+		write("");
+	}
+	
+	// private
+	function myFxn(){
+		alert('private');
+	}
+}
+
+
+
