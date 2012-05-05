@@ -14,9 +14,11 @@ function Comm(){
 		var reqType = "POST";
 		var reqURL = baseURL+"scores"+"?"+params;
 		var reqSync = true;
+		alert('add scores 0');
 		requestAdd.onreadystatechange = addedScores;
 		requestAdd.open(reqType,reqURL,reqSync);
 		requestAdd.send();
+		alert('add scores 1');
 	}
 	this.addedScores = addedScores;
 	function addedScores(){
@@ -31,9 +33,11 @@ function Comm(){
 		var reqType = "GET";
 		var reqURL = baseURL+"scores.json";
 		var reqSync = true;
+		alert('list scores 0');
 		requestIndex.onreadystatechange = updateScores; // show current list
 		requestIndex.open(reqType,reqURL,reqSync);
 		requestIndex.send(); // nothing specific
+		alert('list scores 1');
 	}
 	this.updateScores = updateScores;
 	function updateScores(){
