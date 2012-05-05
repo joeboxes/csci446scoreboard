@@ -16,14 +16,12 @@ function Comm(){
 		var reqType = "POST";
 		var reqURL = baseURL+"scores"+"?"+params;
 		var reqSync = true;
-		alert(reqURL);
 		requestAdd.onreadystatechange = addedScores;
 		requestAdd.open(reqType,reqURL,reqSync);
 		requestAdd.send();
 	}
 	this.addedScores = addedScores;
 	function addedScores(){
-		alert(['add', requestAdd.readyState, requestAdd.status ]);
 		if (requestAdd.readyState==4 && requestAdd.status==200){
 			dispatch.alertAll(Comm.EVENT_ADDED,true);
 			listScores();
@@ -35,11 +33,9 @@ function Comm(){
 		var reqType = "GET";
 		var reqURL = baseURL+"scores.json";
 		var reqSync = true;
-		alert('list scores 0');
 		requestIndex.onreadystatechange = updateScores; // show current list
 		requestIndex.open(reqType,reqURL,reqSync);
 		requestIndex.send(); // nothing specific
-		alert('list scores 1');
 	}
 	this.updateScores = updateScores;
 	function updateScores(){
