@@ -14,14 +14,13 @@ function Comm(){
 		var reqType = "POST";
 		var reqURL = baseURL+"scores"+"?"+params;
 		var reqSync = true;
-		alert('add scores 0');
 		requestAdd.onreadystatechange = addedScores;
 		requestAdd.open(reqType,reqURL,reqSync);
 		requestAdd.send();
-		alert('add scores 1');
 	}
 	this.addedScores = addedScores;
 	function addedScores(){
+		alert(['add', requestAdd.readyState, requestAdd.status ]);
 		if (requestAdd.readyState==4 && requestAdd.status==200){
 			dispatch.alertAll(Comm.EVENT_ADDED,true);
 			listScores();
